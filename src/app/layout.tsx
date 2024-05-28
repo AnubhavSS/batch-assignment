@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
+import { ThemeProvider } from "next-themes"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,10 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <ThemeProvider attribute="class">
         <Header />
         {children}
-
         <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
